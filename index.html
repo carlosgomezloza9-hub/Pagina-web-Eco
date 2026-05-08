@@ -3,245 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto ODS 7 & 11 | La Salle Bajío</title>
+    <title>Agenda 2030 | ODS 7 y 11</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <style>
-        :root {
-            --primary: #8b5cf6;
-            --secondary: #06b6d4;
-            --ods7: #fcc30b;
-            --ods11: #fd9d24;
-            --bg: #030712;
-            --glass: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --text: #f8fafc;
-        }
-
+        :root { --primary: #8b5cf6; --ods7: #fcc30b; --ods11: #fd9d24; --bg: #030712; --text: #f8fafc; }
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        nav {
-            position: fixed;
-            top: 0; width: 100%;
-            padding: 1rem 5%;
-            display: flex; justify-content: space-between; align-items: center;
-            background: rgba(3, 7, 18, 0.9);
-            backdrop-filter: blur(15px);
-            z-index: 1000;
-            border-bottom: 1px solid var(--glass-border);
-        }
-
-        .nav-links { display: flex; gap: 20px; list-style: none; }
-        .nav-links a { text-decoration: none; color: #94a3b8; font-size: 0.85rem; transition: 0.3s; }
-        .nav-links a:hover { color: var(--secondary); }
-
-        .hero {
-            min-height: 100vh;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            text-align: center; padding: 0 10%;
-            background: linear-gradient(rgba(3, 7, 18, 0.85), rgba(3, 7, 18, 0.85)), 
-                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072') no-repeat center center/cover;
-        }
-
-        .authors-top {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-
-        .hero h1 {
-            font-family: 'Poppins';
-            font-size: clamp(2.5rem, 7vw, 4rem);
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(to right, #fff, #94a3b8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        section { padding: 100px 10%; }
-        
-        .content-card {
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
-            border-radius: 35px;
-            padding: 50px;
-            margin-bottom: 50px;
-        }
-
-        .agenda-header { border-left: 5px solid var(--primary); padding-left: 20px; margin-bottom: 30px; }
-        .ods7-header { border-left: 5px solid var(--ods7); padding-left: 20px; margin-bottom: 30px; }
-        .ods11-header { border-left: 5px solid var(--ods11); padding-left: 20px; margin-bottom: 30px; }
-
-        h2 { font-family: 'Poppins'; font-size: 2.2rem; margin-bottom: 15px; }
-        h3 { font-family: 'Poppins'; font-size: 1.5rem; margin-top: 25px; margin-bottom: 15px; color: var(--secondary); }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .info-item {
-            background: rgba(255, 255, 255, 0.02);
-            padding: 25px;
-            border-radius: 20px;
-            border: 1px solid var(--glass-border);
-        }
-
-        footer {
-            padding: 60px 10%;
-            background: #010409;
-            text-align: center;
-            border-top: 1px solid var(--glass-border);
-        }
-
-        .member-chip {
-            display: inline-block;
-            padding: 8px 18px;
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
-            border-radius: 50px;
-            font-size: 0.85rem;
-            margin: 5px;
-        }
-
-        @media (max-width: 768px) {
-            section { padding: 60px 5%; }
-            .content-card { padding: 30px 20px; }
-        }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.7; }
+        nav { position: fixed; top: 0; width: 100%; padding: 1rem 5%; background: rgba(3,7,18,0.9); backdrop-filter: blur(15px); z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 10%; background: linear-gradient(rgba(3,7,18,0.8), rgba(3,7,18,0.8)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072') no-repeat center/cover; }
+        .authors { color: #06b6d4; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1rem; font-size: 0.8rem; }
+        section { padding: 80px 10%; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 30px; padding: 40px; margin-bottom: 30px; overflow: hidden; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 25px; }
+        .item { background: rgba(255,255,255,0.02); padding: 25px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); }
+        .img-container { width: 100%; height: 250px; border-radius: 20px; margin-bottom: 20px; overflow: hidden; }
+        .img-container img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .img-container img:hover { transform: scale(1.05); }
+        h1, h2 { font-family: 'Poppins'; margin-bottom: 15px; }
+        .badge { display: inline-block; padding: 5px 15px; border-radius: 50px; font-size: 0.75rem; font-weight: 800; margin-bottom: 15px; text-transform: uppercase; color: #000; }
+        footer { padding: 60px 10%; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; color: #94a3b8; }
     </style>
 </head>
 <body>
+    <nav><div style="font-weight: 800; letter-spacing: 1px;">UNIVERSIDAD LA SALLE BAJÍO</div></nav>
 
-    <nav>
-        <div style="font-weight: 800;">UNIVERSIDAD LA SALLE</div>
-        <ul class="nav-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#agenda">Agenda 2030</a></li>
-            <li><a href="#ods7">Energía</a></li>
-            <li><a href="#ods11">Ciudades</a></li>
-        </ul>
-    </nav>
-
-    <header class="hero" id="inicio">
-        <div class="authors-top">
-            Carlos Máximo Gómez Loza • Hugo Emilio Lona Pérez • Hugo Daniel Aguilar Navarro • Dalí Rincon Ruiz • Diego Jesael Avila Chaparro
-        </div>
-        <h1>Proyecto: ODS 7 y ODS 11</h1>
-        <p>Garantizar energía limpia y construir comunidades resilientes: Los pilares de la sostenibilidad global.</p>
+    <header class="hero">
+        <p class="authors">Gómez Loza • Lona Pérez • Aguilar Navarro • Rincón Ruiz • Ávila Chaparro</p>
+        <h1 style="font-size: clamp(2.5rem, 8vw, 5rem);">Transformar Nuestro Mundo</h1>
+        <p style="max-width: 800px; color: #94a3b8; font-size: 1.2rem;">Análisis profundo sobre los Objetivos de Desarrollo Sostenible y la Agenda 2030.</p>
     </header>
 
-    <section id="agenda">
-        <div class="content-card">
-            <div class="agenda-header">
-                <h2>¿Qué es la Agenda 2030?</h2>
-            </div>
-            <p>La Agenda 2030 es el compromiso colectivo más audaz de nuestra época hacia la transformación global. Aprobada en 2015 por los 193 Estados Miembros de las Naciones Unidas, se presenta como un plan de acción centrado en las personas, el planeta y la prosperidad.</p>
-            
-            <div class="info-grid">
-                <div class="info-item">
-                    <h3>Visión Holística</h3>
-                    <p>No es solo un documento de políticas, sino un acuerdo social que reconoce que el bienestar social depende de la preservación de los recursos naturales. Sus 17 objetivos son indivisibles: lo que afecta a la economía afecta al entorno.</p>
+    <section>
+        <div class="card">
+            <span class="badge" style="background: var(--primary); color: #fff;">Introducción</span>
+            <h2>La Agenda 2030 y los ODS</h2>
+            <div class="grid">
+                <div>
+                    <p>La Agenda 2030 es el compromiso colectivo más audaz hacia la transformación global, aprobada por 193 Estados en 2015. No es solo un documento, es un acuerdo social para redirigir el destino humano bajo el principio de inclusión total.</p>
+                    <div class="item" style="margin-top: 20px;">
+                        <h4>Enfoque Holístico</h4>
+                        <p>Se comprende que las decisiones económicas afectan al entorno y que el bienestar social depende de la preservación de los recursos naturales.</p>
+                    </div>
                 </div>
-                <div class="info-item">
-                    <h3>Un Plano Global</h3>
-                    <p>Organizada en 17 Objetivos de Desarrollo Sostenible (ODS), busca erradicar la pobreza, combatir el cambio climático y garantizar que nadie se quede atrás para el año 2030.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="ods7" style="background: #020617;">
-        <div class="content-card">
-            <div class="ods7-header">
-                <h2>ODS 7: Energía Asequible y No Contaminante</h2>
-                <p style="color: var(--ods7); font-weight: 600;">Garantizar el acceso a una energía moderna y fiable.</p>
-            </div>
-            
-            <p>Este objetivo es crucial porque la energía es el motor de casi todos los grandes desafíos y oportunidades a los que se enfrenta el mundo hoy, desde el empleo y la seguridad hasta el cambio climático y la producción de alimentos.</p>
-
-            <div class="info-grid">
-                <div class="info-item">
-                    <h3>Progreso Mundial</h3>
-                    <p>El número de personas sin electricidad disminuyó de 1,200 millones en 2010 a 685 millones en 2022. Sin embargo, el ritmo actual no es suficiente para alcanzar la meta de acceso universal en 2030.</p>
-                </div>
-                <div class="info-item">
-                    <h3>Metas Específicas</h3>
-                    <ul>
-                        <li><strong>7.1:</strong> Acceso universal a servicios energéticos fiables.</li>
-                        <li><strong>7.2:</strong> Aumentar el uso de energías renovables (solar, eólica).</li>
-                        <li><strong>7.3:</strong> Duplicar la tasa de eficiencia energética para reducir el desperdicio.</li>
-                    </ul>
-                </div>
-                <div class="info-item">
-                    <h3>Contexto México</h3>
-                    <p>México goza de una cobertura eléctrica envidiable (99%), pero el verdadero desafío reside en la descarbonización de la red eléctrica, la cual aún depende fuertemente de la quema de combustibles fósiles.</p>
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?q=80&w=1000" alt="Naturaleza y Planeta">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="ods11">
-        <div class="content-card">
-            <div class="ods11-header">
-                <h2>ODS 11: Ciudades y Comunidades Sostenibles</h2>
-                <p style="color: var(--ods11); font-weight: 600;">Lograr asentamientos humanos inclusivos y resilientes.</p>
+    <section style="background: #020617;">
+        <div class="card" style="border-left: 8px solid var(--ods7);">
+            <span class="badge" style="background: var(--ods7);">Objetivo 7</span>
+            <h2>Energía Asequible y No Contaminante</h2>
+            <div class="grid">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1466611653911-95282fc3656b?q=80&w=1000" alt="Energía Eólica">
+                </div>
+                <div>
+                    <p>Busca el acceso universal a energía moderna, confiable y sostenible a precios justos. El sector energético es uno de los mayores contaminantes de CO2 y causante del calentamiento global.</p>
+                    <div class="item" style="margin-top: 20px;">
+                        <h4>Situación Actual</h4>
+                        <p>Aunque el número de personas sin luz bajó de 958 a 685 millones, 2.1 billones aún carecen de combustibles limpios.</p>
+                    </div>
+                </div>
             </div>
-
-            <p>Más de la mitad de la población mundial vive en ciudades, y se espera que esta cifra aumente al 70% para 2050. Las ciudades ocupan solo el 3% de la tierra, pero generan el 70% de las emisiones de carbono.</p>
-
-            <div class="info-grid">
-                <div class="info-item">
-                    <h3>Crisis de Vivienda</h3>
-                    <p>Casi 1,100 millones de personas viven en barrios marginales debido a una urbanización que ha superado la capacidad de los gobiernos para proporcionar servicios básicos y viviendas asequibles.</p>
+            <div class="grid">
+                <div class="item">
+                    <h4>Metas 7.1 y 7.2</h4>
+                    <p>Garantizar acceso universal e incrementar significativamente la proporción de energías renovables.</p>
                 </div>
-                <div class="info-item">
-                    <h3>Infraestructura Sostenible</h3>
-                    <p>Meta 11.2: Transporte público seguro y eficiente. Meta 11.6: Gestión de residuos municipales y calidad del aire para reducir la huella ambiental negativa per cápita.</p>
-                </div>
-                <div class="info-item">
-                    <h3>Espacios Públicos</h3>
-                    <p>Se busca proporcionar acceso universal a zonas verdes y espacios públicos seguros, especialmente para mujeres, niños, personas mayores y personas con discapacidad.</p>
+                <div class="item">
+                    <h4>México y el ODS 7</h4>
+                    <p>La cobertura eléctrica es del 99%, pero el desafío es transitar hacia lo solar y eólico pese a las políticas actuales.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="conclusión" style="background: #020617;">
-        <div style="text-align: center; max-width: 900px; margin: 0 auto;">
-            <h2 style="font-family: 'Poppins'; margin-bottom: 30px;">Reflexión y Análisis Final</h2>
-            <div class="info-item" style="text-align: left; background: rgba(139, 92, 246, 0.05);">
-                <p>A través de nuestra investigación, observamos que la comunidad reconoce la gravedad de los problemas ambientales, como la escasez de agua y la contaminación del aire. Existe un consenso en que tanto las autoridades como las empresas deben liderar el cambio, pero la acción individual (ahorro energético, reducción de plásticos) es el cimiento necesario.</p>
-                <p style="margin-top: 15px;">Trabajar estos objetivos desde la escuela es vital para que las nuevas generaciones comprendan que la calidad de vida futura depende directamente del cuidado del mundo real hoy.</p>
+    <section>
+        <div class="card" style="border-left: 8px solid var(--ods11);">
+            <span class="badge" style="background: var(--ods11);">Objetivo 11</span>
+            <h2>Ciudades y Comunidades Sostenibles</h2>
+            <div class="grid">
+                <div>
+                    <p>Busca lograr ciudades inclusivas, seguras y resilientes mediante la planificación urbana. Casi 1,100 millones de personas viven en barrios marginales.</p>
+                    <div class="item" style="margin-top: 20px;">
+                        <h4>Desafíos Críticos</h4>
+                        <p>El crecimiento urbano descontrolado supera la infraestructura, causando contaminación atmosférica y escasez de espacios públicos.</p>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=1000" alt="Ciudad Sostenible">
+                </div>
             </div>
+            <div class="grid">
+                <div class="item">
+                    <h4>Metas de Movilidad</h4>
+                    <p>Proporcionar transporte seguro y accesible, prestando atención a personas con discapacidad y adultos mayores.</p>
+                </div>
+                <div class="item">
+                    <h4>Protección Cultural</h4>
+                    <p>Redoblar esfuerzos para proteger el patrimonio cultural y natural del mundo frente al crecimiento urbano.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: #020617;">
+        <div class="card" style="text-align: center;">
+            <div class="img-container" style="height: 350px;">
+                <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=1000" alt="Futuro Sostenible">
+            </div>
+            <h2>Análisis Final y Reflexión</h2>
+            <p>La mayoría reconoce que los problemas ambientales afectan su salud y calidad del aire. Acciones simples como ahorrar luz, separar basura y participar en comunidad son fundamentales para un futuro limpio.</p>
+            <p style="margin-top: 15px; font-weight: 600; color: var(--primary);">Priorizar el aprendizaje desde pequeños es clave para entender el mundo real.</p>
         </div>
     </section>
 
     <footer>
-        <p><strong>Integrantes del Equipo</strong></p>
-        <div style="margin: 20px 0;">
-            <div class="member-chip">Carlos Máximo Gómez Loza</div>
-            <div class="member-chip">Hugo Emilio Lona Pérez</div>
-            <div class="member-chip">Hugo Daniel Aguilar Navarro</div>
-            <div class="member-chip">Dalí Rincon Ruiz</div>
-            <div class="member-chip">Diego Jesael Avila Chaparro</div>
-        </div>
-        <p style="font-size: 0.8rem; color: #475569; margin-top: 30px;">Universidad La Salle Bajío | Preparatoria | León, Gto.</p>
+        <p><strong>Equipo:</strong> Gómez Loza Carlos Máximo • Lona Pérez Hugo Emilio • Aguilar Navarro Hugo Daniel • Rincón Ruiz Sebastián Dalí • Ávila Chaparro Diego Jesael</p>
+        <p style="margin-top: 15px;">Universidad La Salle Bajío | 2026</p>
     </footer>
-
 </body>
 </html>
