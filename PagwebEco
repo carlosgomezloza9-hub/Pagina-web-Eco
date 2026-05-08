@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ODS 7 + 11 | Energía y Ciudades del Futuro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@600;700&amp;display=swap');
+        
+        :root {
+            --primary: #3b82f6;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .heading-font {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(30, 41, 59, 0.85)), 
+                        url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .neon-text {
+            text-shadow: 0 0 15px rgb(147 51 234);
+        }
+
+        .section-title {
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, #3b82f6, #8b5cf6);
+            bottom: -8px;
+            left: 0;
+            border-radius: 9999px;
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+        }
+
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-200 overflow-x-hidden">
+    <!-- Navegación -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl">🌍</div>
+                <div>
+                    <span class="heading-font text-2xl font-bold tracking-tight">ODS</span>
+                    <span class="text-blue-400 heading-font text-2xl font-bold">FUTURO</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#inicio" onclick="smoothScrollTo('hero')" class="hover:text-blue-400 transition-colors">Inicio</a>
+                <a href="#proyecto" onclick="smoothScrollTo('proyecto')" class="hover:text-blue-400 transition-colors">El Proyecto</a>
+                <a href="#ods" onclick="smoothScrollTo('ods')" class="hover:text-blue-400 transition-colors">ODS 7 &amp; 11</a>
+                <a href="#impacto" onclick="smoothScrollTo('impacto')" class="hover:text-blue-400 transition-colors">Nuestro Impacto</a>
+                <a href="#conclusiones" onclick="smoothScrollTo('conclusiones')" class="hover:text-blue-400 transition-colors">Conclusiones</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <a href="#explorar" 
+                   onclick="smoothScrollTo('proyecto')"
+                   class="px-6 py-3 bg-white text-slate-900 rounded-2xl font-semibold text-sm hover:bg-blue-400 hover:text-white transition-all flex items-center gap-2">
+                    <i class="fas fa-arrow-down"></i>
+                    EXPLORAR
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero" class="hero-bg min-h-screen flex items-center relative">
+        <div class="max-w-7xl mx-auto px-6 pt-20">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 glass rounded-3xl text-sm border border-white/20">
+                        <span class="relative flex h-3 w-3">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                        </span>
+                        Agenda 2030 • Universidad La Salle Bajío
+                    </div>
+                    
+                    <h1 class="text-6xl md:text-7xl heading-font font-bold leading-tight tracking-tighter neon-text">
+                        ENERGÍA<br>LIMPIA +<br>CIUDADES<br>VERDES
+                    </h1>
+                    
+                    <p class="text-2xl text-slate-300 max-w-lg">
+                        ODS 7 y ODS 11: Cómo los futuros físicos-matemáticos transformamos el mundo
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <button onclick="smoothScrollTo('proyecto')" 
+                                class="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl font-semibold text-lg flex items-center gap-3 hover:scale-105 transition-transform">
+                            <span>Conoce el Proyecto</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        
+                        <button onclick="smoothScrollTo('ods')" 
+                                class="px-8 py-4 border border-white/30 hover:border-white/60 rounded-3xl font-medium text-lg transition-all">
+                            Ver ODS 7 &amp; 11
+                        </button>
+                    </div>
+                    
+                    <div class="flex items-center gap-8 pt-6">
+                        <div>
+                            <div class="text-emerald-400 text-sm font-medium">INTEGRANTES</div>
+                            <div class="text-slate-400 text-sm">Carlos Gómez Loza • Hugo Lona Pérez<br>Hugo Aguilar Navarro • Dalí Rincón Ruiz • Diego Ávila Chaparro</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex justify-end">
+                    <div class="relative">
+                        <div class="absolute -inset-8 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-[4rem] blur-3xl"></div>
+                        <img id="hero-image" 
+                             src="https://picsum.photos/id/1015/800/900" 
+                             alt="Energía sostenible y ciudades del futuro" 
+                             class="rounded-3xl shadow-2xl relative z-10 max-h-[620px] object-cover border border-white/10">
+                        <div class="absolute -bottom-6 -right-6 glass px-6 py-4 rounded-3xl border border-white/20">
+                            <div class="flex items-center gap-4">
+                                <div class="text-4xl">⚡</div>
+                                <div>
+                                    <div class="text-emerald-400 font-semibold">99% cobertura eléctrica</div>
+                                    <div class="text-xs text-slate-400">México</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 flex flex-col items-center gap-2 text-xs tracking-widest">
+            <span class="text-slate-400">DESPLAZA PARA EXPLORAR</span>
+            <div class="w-px h-12 bg-gradient-to-b from-transparent via-slate-400 to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- QUÉ ES ESTE PROYECTO -->
+    <section id="proyecto" class="py-24 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="px-4 py-2 text-xs font-mono tracking-widest bg-blue-950 text-blue-400 rounded-full">PROYECTO EDUCATIVO</span>
+                <h2 class="section-title text-5xl heading-font font-bold mt-4 inline-block">¿Qué es este proyecto?</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-7">
+                    <div class="glass rounded-3xl p-10 border border-white/10">
+                        <p class="text-xl leading-relaxed text-slate-300">
+                            Este proyecto es una exploración profunda de los <span class="text-blue-400 font-semibold">Objetivos de Desarrollo Sostenible 7 y 11</span> de la Agenda 2030 de la ONU. 
+                            Como estudiantes de Física-Matemáticas de la Universidad La Salle Bajío, analizamos cómo nuestras habilidades técnicas pueden impulsar soluciones reales para la transición energética y el desarrollo urbano sostenible.
+                        </p>
+                        
+                        <div class="mt-10 grid grid-cols-2 gap-8">
+                            <div class="space-y-6">
+                                <div class="flex gap-5">
+                                    <div class="w-12 h-12 flex-shrink-0 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center text-3xl">⚡</div>
+                                    <div>
+                                        <h4 class="font-semibold text-lg">ODS 7</h4>
+                                        <p class="text-slate-400 text-sm">Energía asequible y no contaminante</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-6">
+                                <div class="flex gap-5">
+                                    <div class="w-12 h-12 flex-shrink-0 bg-purple-500/10 text-purple-400 rounded-2xl flex items-center justify-center text-3xl">🏙️</div>
+                                    <div>
+                                        <h4 class="font-semibold text-lg">ODS 11</h4>
+                                        <p class="text-slate-400 text-sm">Ciudades y comunidades sostenibles</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-5 space-y-8">
+                    <div class="glass p-8 rounded-3xl border border-white/10">
+                        <i class="fas fa-lightbulb text-4xl text-amber-400 mb-6"></i>
+                        <h3 class="text-2xl font-semibold mb-3">Nuestro enfoque único</h3>
+                        <p class="text-slate-400">Desde la física y las matemáticas podemos modelar flujos energéticos, optimizar redes eléctricas inteligentes, simular el impacto climático y diseñar sistemas urbanos más eficientes.</p>
+                    </div>
+                    
+                    <div class="glass p-8 rounded-3xl border border-white/10">
+                        <div class="flex items-center justify-between mb-8">
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-blue-400">91%</div>
+                                <div class="text-xs uppercase tracking-widest text-slate-500">Acceso global</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-purple-400">99%</div>
+                                <div class="text-xs uppercase tracking-widest text-slate-500">México</div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-400">Avances importantes, pero aún queda mucho por hacer en energías renovables y planificación urbana.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ODS 7 y 11 -->
+    <section id="ods" class="py-24 bg-gradient-to-b from-slate-900 to-slate-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16">
+                <!-- ODS 7 -->
+                <div class="space-y-8">
+                    <div class="flex items-center gap-4">
+                        <div class="text-6xl">⚡</div>
+                        <div>
+                            <span class="text-emerald-400 font-mono text-sm">OBJETIVO 7</span>
+                            <h3 class="text-4xl heading-font font-bold">Energía Asequible y No Contaminante</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6 text-slate-300">
+                        <p>Busca garantizar el acceso universal a energía moderna, confiable, sostenible y asequible.</p>
+                        
+                        <div class="bg-slate-800/50 rounded-2xl p-6 border border-white/5">
+                            <h4 class="font-semibold mb-4 flex items-center gap-2"><i class="fas fa-bullseye"></i> Metas clave</h4>
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex gap-3"><span class="text-emerald-400">•</span> Acceso universal a servicios energéticos</li>
+                                <li class="flex gap-3"><span class="text-emerald-400">•</span> Aumentar energías renovables</li>
+                                <li class="flex gap-3"><span class="text-emerald-400">•</span> Mejorar eficiencia energética</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="uppercase text-xs tracking-widest mb-3 text-slate-400">Problemáticas principales</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-4 py-2 bg-slate-800 text-xs rounded-3xl">Dependencia fósiles</span>
+                                <span class="px-4 py-2 bg-slate-800 text-xs rounded-3xl">Cambio climático</span>
+                                <span class="px-4 py-2 bg-slate-800 text-xs rounded-3xl">Altos costos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ODS 11 -->
+                <div class="space-y-8">
+                    <div class="flex items-center gap-4">
+                        <div class="text-6xl">🏙️</div>
+                        <div>
+                            <span class="text-violet-400 font-mono text-sm">OBJETIVO 11</span>
+                            <h3 class="text-4xl heading-font font-bold">Ciudades y Comunidades Sostenibles</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6 text-slate-300">
+                        <p>Hacer que las ciudades sean inclusivas, seguras, resilientes y sostenibles mediante una mejor planificación urbana.</p>
+                        
+                        <div class="bg-slate-800/50 rounded-2xl p-6 border border-white/5">
+                            <h4 class="font-semibold mb-4 flex items-center gap-2"><i class="fas fa-bullseye"></i> Metas clave</h4>
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex gap-3"><span class="text-violet-400">•</span> Vivienda adecuada y barrios mejorados</li>
+                                <li class="flex gap-3"><span class="text-violet-400">•</span> Transporte sostenible</li>
+                                <li class="flex gap-3"><span class="text-violet-400">•</span> Reducción de impacto ambiental</li>
+                                <li class="flex gap-3"><span class="text-violet-400">•</span> Espacios públicos verdes</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="uppercase text-xs tracking-widest mb-3 text-slate-400">Desafíos en México</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-4 py-2 bg-slate-800 text-xs rounded-3xl">Urbanización rápida</span>
+                                <span class="px-4 py-2 bg-slate-800 text-xs rounded-3xl">Contaminación</span>
+                                <span class="px-4 py-2 bg-slate-800 text-xs rounded-3xl">Falta de espacios verdes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMPACTO FÍSICO-MATEMÁTICO -->
+    <section id="impacto" class="py-24 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-5xl heading-font font-bold inline-block">Nuestro Rol como Físicos-Matemáticos</h2>
+                <p class="mt-4 text-xl text-slate-400 max-w-2xl mx-auto">Las ciencias exactas son clave para resolver los grandes desafíos de la sostenibilidad</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-3xl card-hover border border-white/10">
+                    <div class="h-14 w-14 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center text-4xl mb-6">📐</div>
+                    <h4 class="text-2xl font-semibold mb-3">Modelación Matemática</h4>
+                    <p class="text-slate-400">Optimización de redes eléctricas, simulación de flujos energéticos y predicción de demanda mediante ecuaciones diferenciales y algoritmos.</p>
+                </div>
+                
+                <div class="glass p-8 rounded-3xl card-hover border border-white/10">
+                    <div class="h-14 w-14 bg-purple-500/10 text-purple-400 rounded-2xl flex items-center justify-center text-4xl mb-6">🔬</div>
+                    <h4 class="text-2xl font-semibold mb-3">Física Aplicada</h4>
+                    <p class="text-slate-400">Diseño de paneles solares más eficientes, almacenamiento de energía, termodinámica de edificios sostenibles y análisis de materiales.</p>
+                </div>
+                
+                <div class="glass p-8 rounded-3xl card-hover border border-white/10">
+                    <div class="h-14 w-14 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center text-4xl mb-6">📊</div>
+                    <h4 class="text-2xl font-semibold mb-3">Análisis de Datos</h4>
+                    <p class="text-slate-400">Monitoreo en tiempo real del consumo energético, visualización de patrones de contaminación y evaluación de impacto de políticas públicas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESTADÍSTICAS -->
+    <section class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div id="stat1" class="stat-number text-6xl font-bold text-blue-400">685</div>
+                    <div class="text-slate-400 mt-2">Millones sin electricidad (2022)</div>
+                </div>
+                <div>
+                    <div id="stat2" class="stat-number text-6xl font-bold text-purple-400">91</div>
+                    <div class="text-slate-400 mt-2">% Acceso global a electricidad</div>
+                </div>
+                <div>
+                    <div id="stat3" class="stat-number text-6xl font-bold text-emerald-400">1100</div>
+                    <div class="text-slate-400 mt-2">Millones en barrios marginales</div>
+                </div>
+                <div>
+                    <div id="stat4" class="stat-number text-6xl font-bold text-amber-400">99</div>
+                    <div class="text-slate-400 mt-2">% Cobertura eléctrica México</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ANÁLISIS FINAL -->
+    <section id="conclusiones" class="py-24 bg-slate-900">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-5xl heading-font font-bold mb-10">Conclusiones y Llamado a la Acción</h2>
+            
+            <div class="glass rounded-3xl p-12 border border-white/10 text-left max-w-3xl mx-auto">
+                <p class="text-lg leading-relaxed mb-8">
+                    Los ODS 7 y 11 son interdependientes. No podemos tener ciudades sostenibles sin energía limpia, ni energía limpia sin planificación urbana inteligente.
+                </p>
+                
+                <div class="border-l-4 border-blue-500 pl-6 mb-10">
+                    <p class="italic text-slate-300">
+                        “Como físicos-matemáticos, tenemos las herramientas para modelar, predecir y optimizar el futuro. La sostenibilidad no es solo un ideal, es una ecuación que debemos resolver juntos.”
+                    </p>
+                </div>
+                
+                <div class="flex flex-col md:flex-row gap-6 justify-center">
+                    <a href="https://agenda2030.mx" target="_blank"
+                       class="flex-1 text-center py-6 bg-white/5 hover:bg-white/10 border border-white/10 rounded-3xl transition-all">
+                        <span class="block text-sm text-slate-400">Explorar más</span>
+                        <span class="block font-semibold">Agenda 2030 México</span>
+                    </a>
+                    <a href="https://sdgs.un.org" target="_blank"
+                       class="flex-1 text-center py-6 bg-white/5 hover:bg-white/10 border border-white/10 rounded-3xl transition-all">
+                        <span class="block text-sm text-slate-400">Sitio oficial</span>
+                        <span class="block font-semibold">ONU - Objetivos de Desarrollo</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-xs text-slate-500">
+                Proyecto elaborado por:<br>
+                Carlos Máximo Gómez Loza, Hugo Emilio Lona Pérez, Hugo Daniel Aguilar Navarro,<br>
+                Sebastián Dalí Rincón Ruiz, Diego Jesael Ávila Chaparro
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6 text-center text-slate-500 text-sm">
+            <p>Universidad La Salle Bajío • Física-Matemáticas • 2025</p>
+            <p class="mt-2">Basado en la Agenda 2030 de las Naciones Unidas</p>
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script already included
+        
+        function smoothScrollTo(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+            } else {
+                // Fallback for other IDs
+                document.querySelector(`#${sectionId}`).scrollIntoView({ behavior: "smooth" });
+            }
+        }
+        
+        // Animate stats
+        function animateValue(id, start, end, duration) {
+            const obj = document.getElementById(id);
+            if (!obj) return;
+            
+            const range = end - start;
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * range + start);
+                obj.innerHTML = value;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                } else {
+                    obj.innerHTML = end;
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+        
+        // Trigger animations when scrolled into view
+        function handleScroll() {
+            const statsSection = document.querySelector('#stat1');
+            if (statsSection) {
+                const rect = statsSection.getBoundingClientRect();
+                if (rect.top < window.innerHeight && !statsSection.dataset.animated) {
+                    statsSection.dataset.animated = "true";
+                    animateValue("stat1", 0, 685, 1800);
+                    animateValue("stat2", 80, 91, 1600);
+                    animateValue("stat3", 900, 1100, 2000);
+                    animateValue("stat4", 90, 99, 1400);
+                }
+            }
+        }
+        
+        window.addEventListener('scroll', handleScroll);
+        
+        // Initialize hero image with better placeholder if needed
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("%cPágina de ODS 7 y 11 cargada correctamente 🌍", "color: #60a5fa; font-family: monospace");
+            
+            // Make sure stats are ready
+            setTimeout(() => {
+                handleScroll();
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
